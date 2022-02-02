@@ -2,6 +2,7 @@ function Ignore1() {
   var ui = prompt("UI無視：", 90);
   var boss = prompt("BOSS防禦：", 300);
   var n1 = 100 - (1 - ui / 100) * boss;
+  if(n1<0) n1=0;
   alert("實際對BOSS傷害 " + n1 + " %");
 }
 function Ignore2() {
