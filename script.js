@@ -76,8 +76,8 @@ function scroll() {
   }
 }
 function Powercalculate() {
-  var lv = prompt("等級：");
-  var st = prompt("星力：");
+  var lv = prompt("輸入等級：");
+  var st = prompt("輸入星力(需扣除公會加成)：");
   var x = 0;
   var y = 0;
   if (lv >= 60 && lv < 100) x = 0.5 * lv ** 3 + 12500;
