@@ -117,3 +117,64 @@ function Powercalculate() {
     alert("戰力：" + n);
   }
 }
+function scroll_160() {
+  var ba = prompt("基礎攻擊：", 347);
+  var sf = prompt("星力(1-25)：", 22);
+  var bs = prompt("星火增加的攻擊：", 63);
+  var scn = prompt("已衝的卷數：", 12);
+  var fa = prompt("最終攻擊：", 866);
+  var tt3 = 0;
+  var tt1 = 0;
+  var tt2 = 0;
+  var dam = 0;
+  var sss = 0;
+  var tmp1 = 0;
+  var xx = 0;
+  var y = 0;
+  var i = 0;
+  var j = 0;
+  var label1 = "";
+  var label2 = "";
+  var cho = false;
+  tt3 = fa - bs;
+  for (i = 1; i <= 2000; i++) {
+    tt2 += 1;
+    tt1 = tt2;
+    dam = 0;
+    sss = 0;
+    while (sss < sf) {
+      sss += 1;
+      if (sss <= 15) {
+        dam = ~~(tt1 / 50) + 1;
+        tt1 += dam;
+      } else if (sss == 16) tt1 += 9;
+      else if (sss == 17) tt1 += 9;
+      else if (sss == 18) tt1 += 10;
+      else if (sss == 19) tt1 += 11;
+      else if (sss == 20) tt1 += 12;
+      else if (sss == 21) tt1 += 13;
+      else if (sss == 22) tt1 += 14;
+      else if (sss == 23) tt1 += 32;
+      else if (sss == 24) tt1 += 33;
+      else if (sss == 25) tt1 += 34;
+    }
+    if (tt1 == tt3 && tt2 - ba > 0 && xx == 0) {
+      tmp1 = 1;
+      y = tt2 - ba;
+      label1 =
+        "衝了" +
+        scn +
+        "張卷軸，攻擊總共加了 " +
+        y +
+        " 攻，\n平均一張加了" +
+        y / scn +
+        "攻。";
+      label2 =
+        "\n\n100%咒文+3攻\n70%咒文+5攻\n30%咒文+7攻\n15%咒文+9攻\n極電卷+9攻\nRED卷+10攻\nX卷+12攻\nV卷+13攻\n究極的黑暗+14攻\n榮耀+10~20攻";
+      alert(label1 + label2);
+    }
+  }
+  if (tmp1 == 0) {
+    alert("數值輸入錯誤(0)");
+  }
+}
